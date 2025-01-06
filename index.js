@@ -22,7 +22,7 @@ const uri =
 mongoose
   .connect(process.env.MONGODB_URI || uri)
   .then(() => console.log("DB okkkk"))
-  .catch(() => console.log("error", error));
+  .catch((error) => console.log("error", error));
 
 const app = express();
 
