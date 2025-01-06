@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 import multer from "multer";
 import cors from "cors";
 import fs from "fs";
-
 import {
   registerValidator,
   loginValidator,
@@ -15,12 +14,12 @@ import PostControler from "./controllers/PostController.js";
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 
 const uri =
-  "mongodb+srv://ksssenia2001:wwwwww@cluster000.sus71bi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster000";
-
+  "mongodb+srv://ksssenia2001:wwwwww@cluster000.sus71bi.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster000";
+  
 // const url = process.env.MONGODB_URI;
 
 mongoose
-  .connect(process.env.MONGODB_URI || uri)
+  .connect(uri)
   .then(() => console.log("DB okkkk"))
   .catch((error) => console.log("error", error));
 
@@ -61,6 +60,9 @@ app.use(cors());
 app.use("/uploads", express.static("uploads"));
 
 //Запросы
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 // Авторизация, необходимо понять есть ли пользователь в б/д
 app.post(
@@ -152,7 +154,7 @@ app.patch(
   UserController.subscribersUser
 );
 
-app.listen(process.env.PORT || 4444, (err) => {
+app.listen(process.env.POuriRT || 4444, (err) => {
   if (err) {
     return console.log(err);
   }
