@@ -15,7 +15,7 @@ import PostControler from "./controllers/PostController.js";
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 
 const uri =
-  "mongodb+srv://ksssenia2001:wwwwww@cluster000.sus71bi.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster000";
+  "mongodb+srv://ksssenia2001:wwwwww@cluster000.sus71bi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster000";
 
 // const url = process.env.MONGODB_URI;
 
